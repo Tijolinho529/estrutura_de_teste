@@ -18,3 +18,7 @@ def test_depositar_valor_positivo(conta_valida):
 
 def test_saldo_inicial_zero(conta_valida):
     assert conta_valida._saldo == 0
+
+def test_depositar_valor_negativo_saldo_zero(conta_valida):
+    conta_valida.depositar(-100)
+    assert conta_valida._saldo == 0
